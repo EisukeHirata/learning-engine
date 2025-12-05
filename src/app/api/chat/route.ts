@@ -73,7 +73,9 @@ export async function POST(req: Request) {
     Summary of the topic: ${content.summary}.
     
     Your goal is to explain concepts clearly, answer questions, and check understanding.
-    Be encouraging and concise.`
+    Be encouraging and concise.
+    
+    IMPORTANT: Use Markdown headings (#, ##, ###) to structure your responses and make them easy to read. Use bullet points and bold text for emphasis.`
 
     // Validate messages
     if (!Array.isArray(messages)) {
@@ -92,7 +94,10 @@ export async function POST(req: Request) {
     if (coreMessages.length === 0) {
       coreMessages.push({
         role: 'user',
-        content: `Please introduce the topic "${content.title}" and start the lesson. Be concise and engaging.`
+        content: `Please provide a comprehensive introduction to "${content.title}". 
+        Start with a clear definition, then outline the key concepts we will cover. 
+        Finally, ask me a question to gauge my current understanding or interest level. 
+        Structure your response with clear headings and bullet points where appropriate.`
       })
     }
 

@@ -144,7 +144,7 @@ export function ChatInterface({ contentId, initialMessages = [], sessionId: init
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-60px)] bg-white relative">
+    <div className="flex flex-col min-h-[calc(100vh-60px)] bg-white">
       <div className="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 pb-32">
         {messages.map((m) => (
           <div
@@ -176,7 +176,7 @@ export function ChatInterface({ contentId, initialMessages = [], sessionId: init
         <div ref={messagesEndRef} />
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-100">
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-100 z-20">
         <div className="max-w-3xl mx-auto">
           <form onSubmit={handleSubmit} className="relative">
             <Input
